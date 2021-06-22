@@ -12,7 +12,7 @@ export function SubscribeButton() {
     const [session] = useSession()
     const router = useRouter()
 
-    const { activeSubscription } session
+    const { activeSubscription } = session
 
      async function handleSubscribe() {
         if(!session) {
