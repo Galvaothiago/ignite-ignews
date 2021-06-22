@@ -12,13 +12,15 @@ export function SubscribeButton() {
     const [session] = useSession()
     const router = useRouter()
 
+    const { activeSubscription } session
+
      async function handleSubscribe() {
         if(!session) {
             signIn('github')
             return
         }
 
-        if(session?.activeSubscription) {
+        if(activeSubscription) {
             router.push('/posts')
         }
 
