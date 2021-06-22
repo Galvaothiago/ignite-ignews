@@ -8,13 +8,12 @@ import styles from "./styles.module.scss"
 //     priceId: string
 // }
 
-export function SubscribeButton() {
+export async function SubscribeButton() {
     const router = useRouter()
    
     async function handleSubscribe() {
         const session = await getSession()
 
-        console.log(session)
         if(!session) {
             signIn('github')
             return
